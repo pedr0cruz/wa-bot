@@ -1,13 +1,25 @@
 /*** Ver detalles en: https://youtu.be/PFJNJQCU_lo
 */
-const  {googleapi} = require('googleapis');
+const { GoogleSpreadsheet } = require('google-spreadsheet');
+const config = require("./config/config");
 
 // Datos globales
 const spreadsheetId = '1MCJZJ2so2TYebC9KAkrOQTKh0Cfdik_xKS-AqbEt6Yg'; // ID obtenido de la url del archivo:https://docs.google.com/spreadsheets/d/1MCJZJ2so2TYebC9KAkrOQTKh0Cfdik_xKS-AqbEt6Yg/edit#gid=2040434871
 // const api_key = "AIzaSyAC3WbVG4xv_Lc3kJj9XlHyFyIp-7dBEqc"; // No se utiliza
 
+const credentials = {
+    client_email: config.GOOGLE_CLIENT_EMAIL,
+    private_key: config.GOOGLE_PRIVATE_KEY,
+  };
+  
 async function getClients() 
 {
+    const sheet = new GoogleSpreadsheet(spreadsheetId);
+    await sheet.useServiceAccountAuth(credentials);  
+    const rows = await sheet.getRows(); // can pass in { limit, offset }
+    console.log(rows[0]); 
+    return rows;
+/*
     // Crea las credenciales google
     const auth = new googleapi.auth.GoogleAuth({
         keyFile: "./config/gscredentials.json",
@@ -26,6 +38,7 @@ async function getClients()
     });
 
     return getRows.data;
+    */
 };
 
 async function setClient( values ) 
