@@ -1,0 +1,14 @@
+{
+  "name": "venom-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "venom-bot": "^3.1.4"
+  }
+}
