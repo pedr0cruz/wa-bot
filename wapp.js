@@ -332,5 +332,5 @@ function WAStatus() {
 
 module.exports = {
   startBot,
-  WAStatus,
+ // WAStatus,
 };
