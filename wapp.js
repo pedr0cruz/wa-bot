@@ -1,7 +1,7 @@
 // import { create, Whatsapp } from 'venom-bot';
 const venom = require('venom-bot');
 const uuid = require("uuid");
-//const dialogflow = require('./dialogflow.js');
+const dialogflow = require('./dialogflow.js');
 //const googlesheet = require('./googlesheet.js')
 
 const sessionMap = new Map(); // Gestion de sesiones
