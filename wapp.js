@@ -2,7 +2,7 @@
 const venom = require('venom-bot');
 const uuid = require("uuid");
 const dialogflow = require('./dialogflow.js');
-//const googlesheet = require('./googlesheet.js')
+const googlesheet = require('./googlesheet.js')
 
 const sessionMap = new Map(); // Gestion de sesiones
 //const grupoAdmin = "51997300013-1627431529@g.us";
@@ -26,6 +26,7 @@ const chromiumArgs = [
 ];
 var contexto = null;
 var waStatus;
+
 function startBot() {
   venom
     .create('session', (base64Qrimg, asciiQR, attempts) => { }, (statusSession, session) => { }, { disableWelcome: true, disableSpins: true, useChrome: false, browserArgs: ['--no-sandbox'] })
@@ -331,5 +332,5 @@ function WAStatus() {
 
 module.exports = {
   startBot,
-  // WAStatus,
+  WAStatus,
 };
