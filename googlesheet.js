@@ -1,6 +1,6 @@
 /*** Ver detalles en: https://youtu.be/PFJNJQCU_lo
 */
-const  {google} = require('googleapis');
+//const  {google} = require('googleapis');
 
 // Datos globales
 const spreadsheetId = '1MCJZJ2so2TYebC9KAkrOQTKh0Cfdik_xKS-AqbEt6Yg'; // ID obtenido de la url del archivo:https://docs.google.com/spreadsheets/d/1MCJZJ2so2TYebC9KAkrOQTKh0Cfdik_xKS-AqbEt6Yg/edit#gid=2040434871
@@ -86,7 +86,7 @@ async function setVenta( values ) {
 };
 
 module.exports = {
-    getClients: getClients,
-    setClient: setClient,
-    setVenta: setVenta,
+    getClients,
+    setClient,
+    setVenta,
 } 
