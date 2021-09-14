@@ -2,6 +2,7 @@
 */
 // const  {googleapi} = require('googleapis');
 //const  googleapi = require( '@googleapis/sheets' ); 
+const { googleapi } = require('google-spreadsheet');
 
 // Datos globales
 const spreadsheetId = '1MCJZJ2so2TYebC9KAkrOQTKh0Cfdik_xKS-AqbEt6Yg'; // ID obtenido de la url del archivo:https://docs.google.com/spreadsheets/d/1MCJZJ2so2TYebC9KAkrOQTKh0Cfdik_xKS-AqbEt6Yg/edit#gid=2040434871
