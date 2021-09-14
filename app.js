@@ -11,7 +11,8 @@ const chromiumArgs = [
   ];
 
 venom
-git  //.create('session', (base64Qrimg, asciiQR, attempts) => {}, (statusSession, session) => {}, {disableWelcome: true, disableSpins: true, useChrome: false, browserArgs: chromiumArgs })
+  .create('session', (base64Qrimg, asciiQR, attempts) => {}, (statusSession, session) => {}, {disableWelcome: true, disableSpins: true, useChrome: false, browserArgs: ['--no-sandbox'] })
+  //.create('session', (base64Qrimg, asciiQR, attempts) => {}, (statusSession, session) => {}, {disableWelcome: true, disableSpins: true, useChrome: false, browserArgs: chromiumArgs })
   //.create()
   .then((client) => start(client))
   .catch((erro) => {
