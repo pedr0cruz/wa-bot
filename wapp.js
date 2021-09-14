@@ -73,11 +73,11 @@ function start(client) {
     else contexto = null;
   
     // Se conecta con Dialogflow y envia el texto proveniente de WA, incluyendo parametros y contexto
-    // let payload =  await dialogflow.sendToDialogFlow( message.body ,
-    //                                                   sessionMap.get(message.from).sessionId, 
-    //                                                   sessionMap.get(message.from).cliente, 
-    //                                                   contexto );
-    // // console.log( '\n\nPayload ', payload);
+    let payload =  await dialogflow.sendToDialogFlow( message.body ,
+                                                      sessionMap.get(message.from).sessionId, 
+                                                      sessionMap.get(message.from).cliente, 
+                                                      contexto );
+    // console.log( '\n\nPayload ', payload);
 
     // Envia las respuestas de Dialogflow de vuelta al WA
     let responses = payload.fulfillmentMessages;

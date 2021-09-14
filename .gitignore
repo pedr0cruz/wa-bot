@@ -3,3 +3,4 @@ config
 .vscode
 *.pem
 .env
+tokens/session.data.json
