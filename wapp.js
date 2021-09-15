@@ -43,6 +43,7 @@ function startBot() {
 function start(client) {
   // recibe un mensaje de WA
   client.onMessage(async (message) => {
+    console.log('onMessage: ', message);
    try {
     var cliente = { found: false };
     setSessionAndUser( message.from ); // Crea un ID para el numero telefonico de Usuario
