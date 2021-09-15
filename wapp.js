@@ -29,7 +29,7 @@ var waStatus;
 
 function startBot() {
   venom
-    .create('session', (base64Qrimg, asciiQR, attempts) => { }, (statusSession, session) => { }, { disableWelcome: true, disableSpins: true, useChrome: false, browserArgs: ['--no-sandbox'] })
+    .create('session', (base64Qrimg, asciiQR, attempts) => { }, (statusSession, session) => { }, { disableWelcome: true, disableSpins: true, useChrome: true, browserArgs: ['--no-sandbox'] })
     //.create('session', (base64Qrimg, asciiQR, attempts) => {}, (statusSession, session) => {}, {disableWelcome: true, disableSpins: true, useChrome: false, browserArgs: chromiumArgs })
     //.create()
     .then((client) => start(client))
