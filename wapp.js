@@ -2,7 +2,7 @@
 const venom = require('venom-bot');
 const uuid = require("uuid");
 const dialogflow = require('./dialogflow.js');
-const googlesheet = require('./googlesheet.js')
+const googlesheet = require('./spreadsheet.js')
 
 const sessionMap = new Map(); // Gestion de sesiones
 //const grupoAdmin = "51997300013-1627431529@g.us";
