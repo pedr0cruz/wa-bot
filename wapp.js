@@ -51,18 +51,18 @@ function start(client) {
       // Debe tomar el numero telefonico y buscarlo en el googlesheet de Clientes
       let telefono =  message.from.split("@")[0]; // Obtiene el telefono del sender ...
       sessionMap.get(message.from).cliente.Telefono = telefono; // ... y lo guarda
-      let json = await googlesheet.getClients(); // Obtiene la lista de clientes del google sheets
-
-        // Busca si en el excel esta el numero y si lo encuentra lo guarda 
-        for (var i = 1; i < json.values.length; i++) {
-            if( json.values[i][0] === telefono ){ // Cuando lo encuentre lo guarda
-                sessionMap.get(message.from).cliente.Nombre = json.values[i][1];
-                sessionMap.get(message.from).cliente.Apellido = json.values[i][2];
-                sessionMap.get(message.from).cliente.Ciudad = json.values[i][3];
-                sessionMap.get(message.from).cliente.found = true;
-                break;
-            }
-        }
+      let clientes = await googlesheet.getClients(); // Obtiene la lista de clientes del google sheets
+      // Busca si en el excel esta el numero y si lo encuentra lo guarda 
+      for (cliente of clientes) {
+          console.log(cliente);
+          if( cliente.Telefono === telefono ){ // Cuando lo encuentre lo guarda
+              sessionMap.get(message.from).cliente.Nombre = cliente.Nombre;
+              sessionMap.get(message.from).cliente.Apellido = cliente.Apellido;
+              sessionMap.get(message.from).cliente.Ciudad = cliente.Ciudad;
+              sessionMap.get(message.from).cliente.found = true;
+              break;
+          }
+      }
 
       // Estable el contexto en funcion al cliente encontrado
       if( sessionMap.get(message.from).cliente.found ) 
